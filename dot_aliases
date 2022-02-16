@@ -1,0 +1,13 @@
+# -*- mode: sh; -*-
+
+alias hh="cd ~"
+alias ls='lsd'
+alias ll="lsd -lah"
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='lsd --tree'
+# alias npm='pnpm'
+alias cat="bat"
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
