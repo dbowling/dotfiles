@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+TODO: configure ZSH automatically `chsh -s $(which zsh)`
+=======
 # Dan Bowling's Dotfiles
 
 👋 Hi! This is a [Chezmoi](https://www.chezmoi.io) managed dotfiles repository for MacOS.
@@ -6,6 +9,7 @@ If you're looking for an alternative, I'd suggest [dotbot](https://github.com/an
 
 ## Installing
 
+>>>>>>> 89e31ad (install packages automatically)
 ```sh
 sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply dbowling
 ```
