@@ -2,12 +2,10 @@
 
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias hh="cd ~"
-alias ls='lsd'
-alias ll="lsd -lah"
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='lsd --tree'
+alias ls='exa --icons'
+alias ll="exa --icons --all --long --classify"
+alias tree='exa --icons --all --tree  --classify'
+alias shrub='exa --icons --all --tree --level=2  --classify'
 # alias npm='pnpm'
 alias cat="bat"
 alias python=/usr/local/bin/python3
