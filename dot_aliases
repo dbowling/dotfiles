@@ -1,5 +1,6 @@
 # -*- mode: sh; -*-
 
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias hh="cd ~"
 alias ls='lsd'
 alias ll="lsd -lah"
