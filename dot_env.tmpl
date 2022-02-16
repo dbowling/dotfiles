@@ -3,6 +3,8 @@ export NAME={{ .name }}
 
 export MANPAGER="bat --plain"
 
+export LS_COLORS="$(vivid generate snazzy)"
+
 # Path
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/Users/dan/go/bin:$PATH"
