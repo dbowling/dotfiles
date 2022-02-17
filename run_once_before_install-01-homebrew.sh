@@ -27,5 +27,7 @@ brew "pinentry-mac"
 brew "gpg"
 EOF
 
-echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
-rm "$HOME/bin/chezmoi"
+if [ -f "$HOME/bin/chezmoi" ]; then
+    echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
+    rm "$HOME/bin/chezmoi"
+fi
