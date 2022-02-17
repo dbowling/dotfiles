@@ -1,6 +1,6 @@
 # -*- mode: sh; -*-
 
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias hh="cd ~"
 alias ls='exa --icons'
 alias ll="exa --icons --all --long --classify"
