@@ -67,7 +67,6 @@ brew "watch"
 brew "wget"
 brew "yadm"
 brew "yarn"
-brew "zoom"
 brew "z"
 brew "zplug"
 brew "zsh-completions"
@@ -109,6 +108,7 @@ cask "brainfm"
 cask "iterm2"
 cask "slack"
 cask "visual-studio-code"
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Agenda", id: 1287445660
 mas "BigHairyGoal", id: 699877408
