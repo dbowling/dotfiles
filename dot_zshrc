@@ -28,12 +28,6 @@ fi
 
 zplug load --verbose
 
-
-
-eval "$(direnv hook zsh)"
-
-
-
 autoload -U colors && colors
 
 # Highlight the current autocomplete option
