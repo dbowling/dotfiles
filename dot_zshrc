@@ -16,6 +16,7 @@ zplug "akoenig/gulp.plugin.zsh", defer:2
 zplug "akoenig/npm-run.plugin.zsh", defer:2
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
+zplug "marlonrichert/zsh-autocomplete", defer: 2
 zplug "djui/alias-tips", defer: 4
 zplug "zsh-users/zsh-apple-touchbar", defer 3
 
