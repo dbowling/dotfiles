@@ -4,7 +4,7 @@ set -e # -e: exit on error
 
 if [ ! "$(command -v brew)" ]; then
     echo "Let's install Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    NONINTERACTIVE=1 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 echo "Now, some homebrew essentials..." 
