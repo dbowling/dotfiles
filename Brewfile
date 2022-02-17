@@ -130,13 +130,6 @@ mas "Hand Mirror", id: 1502839586
 mas "Keep It", id: 1272768911
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-# mas "Microsoft Excel", id: 462058435
-# mas "Microsoft OneNote", id: 784801555
-# mas "Microsoft Outlook", id: 985367838
-# mas "Microsoft PowerPoint", id: 462062816
-# mas "Microsoft Remote Desktop", id: 1295203466
-# mas "Microsoft To Do", id: 1274495053
-# mas "Microsoft Word", id: 462054704
 mas "Motion", id: 434290957
 mas "Notability", id: 360593530
 mas "Pages", id: 409201541
