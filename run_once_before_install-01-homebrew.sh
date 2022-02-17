@@ -7,9 +7,10 @@ if [ ! "$(command -v brew)" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo "Now, some homebrew essentials..."
+echo "Now, some homebrew essentials..." 
 
 brew bundle --file=/dev/stdin <<EOF
+brew "chezmoi"
 brew "zsh"
 brew "git"
 brew "zplug"

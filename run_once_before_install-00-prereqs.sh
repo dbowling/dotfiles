@@ -14,7 +14,7 @@ fi
 
 if [ ! "$(command -v chezmoi)" ]; then
     # this is the default location, which might not be in the path
-    [ -f $HOME/.bin/chezmoi ] && export PATH="$HOME/.bin:$PATH"
+    [ -f $HOME/bin/chezmoi ] && export PATH="$HOME/bin:$PATH"
 fi
 
 # Check for chezmoi again after fix
