@@ -23,7 +23,7 @@ brew "cask"
 brew "cmake"
 brew "code-server"
 brew "krb5"
-brew "php", link: false
+brew "php"
 brew "nvm"
 brew "composer"
 brew "csvq"

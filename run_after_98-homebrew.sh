@@ -6,4 +6,4 @@ brew bundle
 brew update
 brew upgrade
 brew cleanup
-brew doctor
+brew doctor 2>&1
