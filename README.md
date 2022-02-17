@@ -23,6 +23,9 @@ You will be prompted for information such as name and email (useful for home/wor
 
 ## Working Notes / TODO
 
+Run brew --prefix to get the install location without making logic in the tempalte.
+https://docs.brew.sh/Manpage#--prefix---unbrewed---installed-formula-
+
 ### Secrets
 
 Anything involving a private key has been excluded from Chezmoi until I can hook up 1Password CLI.

@@ -1,9 +1,6 @@
 #!/bin/sh
 
-echo "🍺 Running maintenance on homebrew..."
+echo "🍺 Running maintenance on homebrew"
 
-brew bundle
-brew update
-brew upgrade
-brew cleanup
-brew doctor 2>&1
+brew bundle -q
+brew cleanup -q 2>&1
