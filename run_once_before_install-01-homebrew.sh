@@ -3,27 +3,29 @@
 set -e # -e: exit on error
 
 if [ ! "$(command -v brew)" ]; then
-    echo "Let's install Homebrew..."
+    echo "🍺 Install Homebrew"
     NONINTERACTIVE=1 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo "Now, some homebrew essentials..." 
+echo "🍺 Install setup essentials (Brewfile will be installed later)" 
 
-brew bundle --file=/dev/stdin <<EOF
+brew bundle -q --file=/dev/stdin <<EOF
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "buo/cask-upgrade"
 brew "chezmoi"
 brew "mas"
+brew "z"
 brew "zsh"
-brew "git"
 brew "zplug"
+brew "zsh-completions"
+brew "git"
 brew "vivid"
 brew "nvm"
 brew "pinentry-mac"
 brew "gpg"
 EOF
 
-echo "Delete chezmoi bin, which is now managed by homebrew"
+echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
 rm "$HOME/bin/chezmoi"
