@@ -134,7 +134,6 @@ mas "Motion", id: 434290957
 mas "Notability", id: 360593530
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
-mas "Pym", id: 1451733095
 mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "ScreenFlow 9", id: 1475796517
