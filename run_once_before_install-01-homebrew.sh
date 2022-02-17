@@ -10,7 +10,12 @@ fi
 echo "Now, some homebrew essentials..." 
 
 brew bundle --file=/dev/stdin <<EOF
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
 brew "chezmoi"
+brew "mas"
 brew "zsh"
 brew "git"
 brew "zplug"
