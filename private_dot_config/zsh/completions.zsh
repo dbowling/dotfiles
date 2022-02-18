@@ -62,7 +62,7 @@ zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 # Complete the alias when _expand_alias is used as a function
 zstyle ':completion:*' complete true
 
-zle -C alias-expension complete-word _generic
+zstyle -C alias-expension complete-word _generic
 bindkey '^a' alias-expension
 zstyle ':completion:alias-expension:*' completer _expand_alias
 
