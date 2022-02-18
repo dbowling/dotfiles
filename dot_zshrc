@@ -3,6 +3,7 @@
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 [ -f $HOME/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
+[ -f $ZSCRIPTS/completions.zsh ] && source $ZSCRIPTS/completions.zsh
 # [ -f $HOME/.hardware.env ] && source $HOME/.hardware.env
 # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
 
@@ -10,6 +11,7 @@
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "zsh-users/zsh-completions", defer: 2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "reegnz/jq-zsh-plugin", defer 5
 zplug "akoenig/gulp.plugin.zsh", defer:2
@@ -32,17 +34,19 @@ zplug load --verbose
 autoload -U colors && colors
 
 # Highlight the current autocomplete option
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Better SSH/Rsync/SCP Autocomplete
-zstyle ':completion:*:(scp|rsync):*' tag-order ' hosts:-ipaddr:ip\ address hosts:-host:host files'
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+# zstyle ':completion:*:(scp|rsync):*' tag-order ' hosts:-ipaddr:ip\ address hosts:-host:host files'
+# zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
+# zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
 
 # Allow for autocomplete to be case insensitive
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}+l:|?=** r:|?=**'
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}+l:|?=** r:|?=**'
 
 # Initialize the autocompletion
+_comp_options+=(globdots)
+source $ZSCRIPTS/completions.zsh
 autoload -Uz compinit && compinit -i
 
 
