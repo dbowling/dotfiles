@@ -3,14 +3,17 @@
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 [ -f $HOME/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
-[ -f $ZSCRIPTS/completions.zsh ] && source $ZSCRIPTS/completions.zsh
-# [ -f $HOME/.hardware.env ] && source $HOME/.hardware.env
-# [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+# [ -f $ZSCRIPTS/completions.zsh ] && source $ZSCRIPTS/completions.zsh
 
-
+if [ -d $ZSCRIPTS ]; then
+    for file in $ZSCRIPTS**/*.zsh; do
+        source "$file"
+    done
+fi
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "junegunn/fzf"
 zplug "zsh-users/zsh-completions"
 zplug "lukechilds/zsh-better-npm-completion"
 zplug "reegnz/jq-zsh-plugin", defer:2
@@ -29,44 +32,19 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load #--verbose
 
 autoload -U colors && colors
 
-# Highlight the current autocomplete option
-# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-# Better SSH/Rsync/SCP Autocomplete
-# zstyle ':completion:*:(scp|rsync):*' tag-order ' hosts:-ipaddr:ip\ address hosts:-host:host files'
-# zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
-# zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
-
-# Allow for autocomplete to be case insensitive
-# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}+l:|?=** r:|?=**'
-
 # Initialize the autocompletion
 _comp_options+=(globdots)
-source $ZSCRIPTS/completions.zsh
+# source $ZSCRIPTS/completions.zsh
 autoload -Uz compinit && compinit -i
 
 
 
 # MUST BE AT END OF .zshrc
 
-# brew install zsh-syntax-highlighting
-# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 eval "$(starship init zsh)"
 
-
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# tabtab source for packages
-# uninstall by removing these lines
-# [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-
-
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
