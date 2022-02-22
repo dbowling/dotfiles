@@ -10,3 +10,4 @@ alias shrub='exa --icons --all --tree --level=2  --classify'
 alias cat="bat"
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
+alias ca="chezmoi apply"
