@@ -1,0 +1,22 @@
+authtoken: 1a3jsMbUVjgwwfD1WmX3HkncDDu_83FhrQKzsB2P4S5LwLAin
+tunnels:
+  umontana:
+    proto: http
+    hostname: umontana.ngrok.io
+    addr: 127.0.0.1:80
+  stencil:
+    proto: http
+    hostname: umontana.ngrok.io
+    addr: 127.0.0.1:3333
+  3333:
+    proto: http
+    hostname: umontana.ngrok.io
+    addr: 127.0.0.1:3333
+
+    # -------------------------
+    # Additional options
+    # -------------------------
+    # auth: "username:password"
+    # host_header: rewrite
+    # inspect: true
+    # bind_tls: true
