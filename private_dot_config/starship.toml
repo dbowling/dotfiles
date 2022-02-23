@@ -1,16 +1,27 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-continuation_prompt = "▶▶"
+continuation_prompt = "[∙](bright-black) "
+
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "✗"
+success_symbol = "[❯](green)"
+error_symbol = "[✗](red)"
+vicmd_symbol = "[❮](green)"
 
 [status]
-format = '[$symbol $common_meaning$signal_name$maybe_int]($style) '
+# format = '[$line_break $symbol $common_meaning$signal_name$maybe_int $fill $git_branch]($style) '
 map_symbol = true
+disabled = false
+
+[fill]
+symbol = "-"
+style = "bold green"
 disabled = false
 
 # Disable the package module, hiding it from the prompt completely
@@ -23,9 +34,10 @@ symbol = " "
 symbol = " "
 
 [directory]
-truncation_length = 30
+truncation_length = 15
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
+style = "bold blue"
 repo_root_style = "bold purple"
 
 [git_state]
@@ -40,12 +52,21 @@ bisect = "BISECTING"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
 
 [git_branch]
-symbol = "🌱 "
+symbol = " "
 truncation_length = 8
 truncation_symbol = "..."
-style = "bold purple"
+style = "grey"
 disabled = false
 
 # [git_metrics]
@@ -57,4 +78,4 @@ disabled = false
 [nodejs]
 symbol = "⬢ "
 style = "bold green"
-disabled = false
+disabled = true
