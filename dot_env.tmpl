@@ -2,7 +2,6 @@ export EMAIL={{ .email }}
 export NAME={{ .name }}
 
 export MANPAGER="bat --plain"
-export LS_COLORS="$(vivid generate snazzy)"
 
 # General $PATH
 export PATH="/usr/local/sbin:$PATH"
@@ -48,5 +47,5 @@ export ZPLUG_HOME=$HOMEBREW_PATH/zplug
 {{ end }}
 
 # editor
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="code"
