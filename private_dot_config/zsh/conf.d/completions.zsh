@@ -30,12 +30,15 @@ bindkey -M menuselect '^xh' accept-and-hold                # Hold
 bindkey -M menuselect '^xn' accept-and-infer-next-history  # Next
 bindkey -M menuselect '^xu' undo                           # Undo
 
+bindkey -M menuselect '\e' undo # escape
+bindkey -M menuselect '\b' Undo # backspace
+
 autoload -U compinit; compinit
 _comp_options+=(globdots) # With hidden files
 
 # Only work with the Zsh function vman
 # See $DOTFILES/zsh/scripts.zsh
-compdef vman="man"
+# compdef vman="man"
 
 # +---------+
 # | Options |

@@ -1,16 +1,16 @@
-
+[ -f $HOME/.zenv ] && source $HOME/.zenv
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 [ -f $HOME/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
 if [ -d $ZSCRIPTS ]; then
-    for file in $ZSCRIPTS**/*.zsh; do
+    for file in $ZSCRIPTS/**/*.zsh; do
         source "$file"
     done
 fi
 
-export LS_COLORS="$(vivid generate snazzy)"
+export LS_COLORS="$(vivid generate solarized-light)"
 
 source $ZPLUG_HOME/init.zsh
 
