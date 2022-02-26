@@ -107,3 +107,6 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 ## For kubernetes
 # source $DOTFILES/zsh/plugins/kubectl-completion/_kubectl
 # zstyle ':completion:*:*:kubectl:*' list-grouped false
+
+# 1Password CLI
+eval "$(op completion zsh)"; compdef _op op
