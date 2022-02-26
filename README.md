@@ -40,6 +40,8 @@ Login to 1Password for the first time with:
 
     eval $(op signin <subdomain>.1password.com <email>)
 
+    eval $(op signin my.1password.com dan@northlander.org)
+
 Then, to login afterwards, run:
 
     eval $(op signin)
