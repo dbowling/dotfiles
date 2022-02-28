@@ -120,6 +120,7 @@ cask "brainfm"
 cask "iterm2"
 cask "slack"
 cask "visual-studio-code"
+cask "fig"
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Agenda", id: 1287445660
