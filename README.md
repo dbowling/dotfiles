@@ -46,6 +46,12 @@ Then, to login afterwards, run:
 
     eval $(op signin)
 
+
+op list items --categories Identity | jq
+
+
+
+
 {{-   onepasswordDocument "SSH public key" .vault -}}
 
 {{- if .isovalent }}
