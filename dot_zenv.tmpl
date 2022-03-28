@@ -15,6 +15,7 @@ export HOMEBREW_PATH="/usr/local/opt"
 {{ end }}
 export PATH="$HOMEBREW_PATH/sbin:$PATH"
 export PATH="$HOMEBREW_PATH/bin:$PATH"
+export PATH="$HOMEBREW_PATH/opt:$PATH"
 
 # Nerd fonts
 export NERD_FONT="FiraCode Nerd Font"
@@ -43,12 +44,7 @@ export SAVEHIST=10000                           # Maximum events in history file
 
 
 # zplug 
-export ZPLUG_HOME=$HOMEBREW_PATH/zplug
-{{ if eq .chezmoi.arch "arm64" }}
-# export PATH="/opt/homebrew/opt/zplug:$PATH"
-{{ else }}
-# export PATH="/usr/local/opt/zplug/bin:$PATH"
-{{ end }}
+export ZPLUG_HOME=$HOMEBREW_PATH/opt/zplug
 
 # editor
 export EDITOR="nvim"
