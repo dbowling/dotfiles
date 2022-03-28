@@ -2,7 +2,8 @@
 
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias hh="cd ~"
-alias ls='exa --icons'
+alias ls='exa --icons -1 --all'
+alias l="exa --icons --all"
 alias ll="exa --icons --all --long --classify"
 alias tree='exa --icons --all --tree  --classify'
 alias shrub='exa --icons --all --tree --level=2  --classify'
