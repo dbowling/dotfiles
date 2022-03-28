@@ -9,11 +9,12 @@ export PATH="$HOME/.bin:$PATH"
 
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" }}
-export HOMEBREW_PATH="/opt/homebrew/opt"
+export HOMEBREW_PATH="/opt/homebrew"
 {{ else }}
 export HOMEBREW_PATH="/usr/local/opt"
 {{ end }}
-export PATH="$HOMEBREW_PATH:$PATH"
+export PATH="$HOMEBREW_PATH/sbin:$PATH"
+export PATH="$HOMEBREW_PATH/bin:$PATH"
 
 # Nerd fonts
 export NERD_FONT="FiraCode Nerd Font"
@@ -25,6 +26,9 @@ export PATH="$HOME/go/bin:$PATH"
 export DENO_INSTALL="$HOME/.deno";
 export PATH="$DENO_INSTALL/bin:$PATH";
 export NVM_DIR="$HOME/.nvm"
+
+# PHP
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # ZSH
 export ZSCRIPTS="$HOME/.config/zsh"            # Just my personal shorthand
