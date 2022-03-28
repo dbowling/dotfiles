@@ -12,3 +12,4 @@ alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 alias ca="chezmoi apply"
 alias gs="git status"
+alias header="watch --color http -h --pretty all "
