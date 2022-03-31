@@ -10,12 +10,13 @@ export PATH="$HOME/.bin:$PATH"
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" }}
 export HOMEBREW_PATH="/opt/homebrew"
-{{ else }}
-export HOMEBREW_PATH="/usr/local/opt"
-{{ end }}
 export PATH="$HOMEBREW_PATH/sbin:$PATH"
 export PATH="$HOMEBREW_PATH/bin:$PATH"
 export PATH="$HOMEBREW_PATH/opt:$PATH"
+{{ else }}
+export PATH="/usr/local/opt:$PATH"
+export HOMEBREW_PATH="/usr/local"
+{{ end }}
 
 # Nerd fonts
 export NERD_FONT="FiraCode Nerd Font"
