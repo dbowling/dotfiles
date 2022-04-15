@@ -24,7 +24,9 @@ brew "git"
 brew "vivid"
 brew "nvm"
 brew "pinentry-mac"
+brew "ripgrep"
 brew "gpg"
+brew "gawk"
 EOF
 
 if [ -f "$HOME/bin/chezmoi" ]; then
