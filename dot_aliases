@@ -8,7 +8,7 @@ alias ll="exa --icons --all --long --classify"
 alias tree='exa --icons --all --tree  --classify'
 alias shrub='exa --icons --all --tree --level=2  --classify'
 # alias npm='pnpm'
-alias cat="bat"
+# alias cat="bat"
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 alias ca="chezmoi apply"
@@ -16,3 +16,7 @@ alias ce="code /Users/dbowling/.local/share/chezmoi"
 alias gs="git status"
 alias header="watch --color http -h --pretty all "
 alias nvm="echo 'use volta'"
+# Open all merge conflicts or currently changed files in VS Code
+# Switch out `code` for `subl`, `vim`, `atom` or your editor's CLI
+alias fix="git diff --name-only | uniq | xargs code"
+alias "git latest"="git for-each-ref --sort=-committerdate refs/heads/"
