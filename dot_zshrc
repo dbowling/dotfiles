@@ -18,6 +18,7 @@ export LS_COLORS="$(vivid generate solarized-light)"
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "agkozak/zsh-z"
 zplug "junegunn/fzf"
 zplug "zsh-users/zsh-completions"
 zplug "lukechilds/zsh-better-npm-completion"

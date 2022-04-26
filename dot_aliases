@@ -1,7 +1,11 @@
 # -*- mode: sh; -*-
 
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-alias hh="cd ~"
+
+# File navigation
+# cd go home
+alias cd="cd ~"
+
 alias ls='exa --icons -1 --all'
 alias l="exa --icons --all"
 alias ll="exa --icons --all --long --classify"
