@@ -1,0 +1,52 @@
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move line up/down with option+up/down
+function! MoveLines(offset) range
+    let l:col = virtcol('.')
+    let l:offset = str2nr(a:offset)
+    exe 'silent! :' . a:firstline . ',' . a:lastline . 'm'
+        \ . (l:offset > 0 ? a:lastline + l:offset : a:firstline + l:offset)
+    exe 'normal ' . l:col . '|'
+endf
+
+imap <silent> <M-up> <C-O>:call MoveLines('-2')<CR>
+imap <silent> <M-down> <C-O>:call MoveLines('+1')<CR>
+nmap <silent> <M-up> :call MoveLines('-2')<CR>
+nmap <silent> <M-down> :call MoveLines('+1')<CR>
+vmap <silent> <M-up> :call MoveLines('-2')<CR>gv
+vmap <silent> <M-down> :call MoveLines('+1')<CR>gv
+
+
+
+
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzyword#converter()],
+  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())

@@ -4,13 +4,75 @@ Dockerfile
 docs
 install.sh
 README.md
+Pictures
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Obsidian/
+zBackup/
+.anyconnect/
+.cisco/
+.degit/
+**/*.bak
+**/*.orig
+**/*.old
+code/**
+Postman
+Public
+bin
+.vscode
+.tool-versions
+Makefile
+
+
+# Node
+.volta
+.npm
+node_modules
+.node_repl_history
+.yarnrc
+
+
+.fig
+.deque
+.viminfo
+.vim
+.oh-my-zsh/**
+.v8flags.*
+.config/fish
+.config/htop
+.config/iterm2
+.local
+.terminfo
+**/*.DS_Store
+.rbenv
+.iboysoft-*
+.hyper_plugins
+.composer
+.config/raycast/extensions
 
 # Cache
 .config/zsh/.zcompdump
 .config/zsh/.zcompdump.zwc
+.cache
+.DDLocalBackups
+.DDPreview
+.zcompdump*
+.ssh/known_hosts
+.kube/cache
 
 # History
-.config/zsh/.zsh_history
+.zsh_sessions
+*.zsh_history
+.bash_history
+.node_repl.history
+.zhistory
+.z
+.lesshst
 
 # Ignore MacOS files
 .CFUserTextEncoding

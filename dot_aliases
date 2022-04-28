@@ -3,9 +3,7 @@
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
 # File navigation
-# cd go home
-alias cd="cd ~"
-alias z="cd ~" # this doesn't work... why???
+alias cdh="cd ~"
 alias x="exit"
 
 alias ls='exa --icons -1 --all'
