@@ -3,7 +3,7 @@
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
 # File navigation
-alias cdh="cd ~"
+# alias cdh="cd ~"
 alias x="exit"
 
 alias ls='exa --icons -1 --all'

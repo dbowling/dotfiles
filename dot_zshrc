@@ -1,12 +1,9 @@
-# Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
 
 [ -f $HOME/.zenv ] && source $HOME/.zenv
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
-[ -f $HOME/.iterm2_shell_integration.zsh ] && source ~/.iterm2_shell_integration.zsh
 
 if [ -d $ZSCRIPTS ]; then
     for file in $ZSCRIPTS/**/*.zsh; do
@@ -16,8 +13,11 @@ fi
 
 export LS_COLORS="$(vivid generate solarized-light)"
 
+export ZSH_MOTD_CUSTOM="Deliver what you promise."
+
 source $ZPLUG_HOME/init.zsh
 
+zplug "Kallahan23/zsh-motd"
 zplug "agkozak/zsh-z"
 zplug "junegunn/fzf"
 zplug "zsh-users/zsh-completions"
@@ -55,7 +55,3 @@ if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 # MUST BE AT END OF .zshrc
 
 eval "$(starship init zsh)"
-
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-

@@ -22,12 +22,13 @@ brew "zplug"
 brew "zsh-completions"
 brew "git"
 brew "vivid"
-brew "nvm"
 brew "pinentry-mac"
 brew "ripgrep"
 brew "gpg"
 brew "gawk"
 EOF
+
+volta install node
 
 if [ -f "$HOME/bin/chezmoi" ]; then
     echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
