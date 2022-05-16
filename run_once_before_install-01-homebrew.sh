@@ -28,8 +28,6 @@ brew "gpg"
 brew "gawk"
 EOF
 
-volta install node
-
 if [ -f "$HOME/bin/chezmoi" ]; then
     echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
     rm "$HOME/bin/chezmoi"
