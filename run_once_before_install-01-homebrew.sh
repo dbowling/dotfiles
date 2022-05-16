@@ -4,7 +4,7 @@ set -e # -e: exit on error
 
 if [ ! "$(command -v brew)" ]; then
     echo "🍺 Install Homebrew"
-    NONINTERACTIVE=1 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 echo "🍺 Install setup essentials (Brewfile will be installed later)" 
