@@ -18,6 +18,7 @@ brew "bat"
 brew "jless"
 brew "caddy"
 brew "deno"
+brew "exa"
 brew "gettext"
 brew "cask"
 brew "cmake"
@@ -64,9 +65,6 @@ brew "tldr"
 brew "tree"
 brew "watch"
 brew "wget"
-brew "yadm"
-brew "yarn"
-brew "z"
 brew "zplug"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
@@ -98,12 +96,3 @@ cask "brainfm"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
-mas "1Password for Safari", id: 1569813296
-mas "Boop", id: 1518425043
-mas "Developer", id: 640199958
-mas "Hand Mirror", id: 1502839586
-mas "Save to Raindrop.io", id: 1549370672
-mas "Slack", id: 803453959
-mas "Tabs Saver for Safari", id: 1440006971
-mas "Xcode", id: 497799835
-mas "Yubico Authenticator", id: 1497506650
