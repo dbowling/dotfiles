@@ -8,3 +8,6 @@ id_dsa
 *.key
 *~
 .DS_Store
+.idea
+.vscode
+Thumbs.db
