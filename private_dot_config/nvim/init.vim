@@ -234,5 +234,5 @@ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 "------------------------------------------------------------
 
-colorscheme github_dark
+" colorscheme github_dark
 " require('telescope').load_extension('fzf')
