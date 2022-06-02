@@ -21,6 +21,7 @@ zplug "Kallahan23/zsh-motd"
 zplug "agkozak/zsh-z"
 zplug "junegunn/fzf"
 zplug "zsh-users/zsh-completions"
+zplug "plugins/npm",   from:oh-my-zsh
 zplug "lukechilds/zsh-better-npm-completion"
 zplug "reegnz/jq-zsh-plugin", defer:2
 zplug "akoenig/gulp.plugin.zsh"
