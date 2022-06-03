@@ -1,34 +1,83 @@
 # Dan Bowling's Dotfiles
 
-👋 Hi! This is a [Chezmoi](https://www.chezmoi.io) managed dotfiles repository for MacOS.
+👋 Hi! This is a [Chezmoi](https://www.chezmoi.io) managed dotfiles repository for MacOS. I found other people's setups really useful, so I'm sharing mine--warts and all!
 
-If you're looking for an alternative, I'd suggest [dotbot](https://github.com/anishathalye/dotbot) or [GNU Stow](https://www.gnu.org/software/stow/stow.html), or even [Dotbot Stow](https://github.com/timbedard/dotbot-stow/). Those are the ones I tried before moving to Chezmoi.
+You will find:
 
-## Installing
+- Zplug for ZSH management
+- Spaceship prompt for terminal theme
+- Most integrations work with Kitty terminal, so I leave Terminal and iTerm2 mostly untouched as a fallback
+
+I'm a senior developer at [Deque](https://www.deque.com), working with Axe Core integrations. As such, this will mostly be JavaScript/Web Development.
+
+I've found it useful to also use this repository to automatically install all the software I can figure out how to automate.
+
+## Alternatives to Chezmoi
+
+If you're looking for a dotfile-specific alternative to Chezmoi, I'd suggest [Dotbot](https://github.com/anishathalye/dotbot) or [GNU Stow](https://www.gnu.org/software/stow/stow.html), or even [Dotbot Stow](https://github.com/timbedard/dotbot-stow/). For a more robust manager, take a look at Ansible.
+
+## Installing Dotfiles
+
+Installation is a one line command for all managed software and dotfiles.
+
+### Prerequisites
+
+None. Even Homebrew is installed for you if not present.
+
+###
+
+Chezmoi has a curlbash to install a github dotfiles repo:
 
 ```sh
 sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply dbowling
 ```
 
-If everything works like it should, this will install Chezmoi, check out the repository, and begin the install process.
+If everything works like it should, this will install Chezmoi, check out the repository, and begin the install process for the dotfiles and managed software.
 
-Prerequisits should already be installed on a Mac, the scripts will check for them before proceeding as well.
-
-You will be prompted for information such as name and email (useful for home/work setups on different computers).
+You will be prompted for information such as name and email (useful for home/work setups on different computers). Chezmoi stores this in their local BoltDB database.
 
 ### Post-install
 
-1. Copy over `id_rsa` from 1Password to the .ssh directory
-1. Copy Kubernetes config
+This repository introduces the pattern of using ZSH to check for any manual actions that haven't been performed. If a check fails, it will output a message prefixed with `[CHEZMOI]` for easy troubleshooting.
 
-## Working Notes / TODO
+The pattern is as follows:
 
-Run brew --prefix to get the install location without making logic in the tempalte.
-https://docs.brew.sh/Manpage#--prefix---unbrewed---installed-formula-
+```bash
+# .zenv
+POSTGRES_BIN_DIR="/Applications/Postgres.app/Contents/Versions/latest/bin"
+if [ -d "$POSTGRES_BIN_DIR" ]; then
+  export PATH=${POSTGRES_BIN_DIR}:$PATH
+else
+  unset POSTGRES_BIN_DIR
+fi
 
-### Secrets
+# post install script
+if [ -z "${POSTGRES_BIN_DIR+1}" ]; then
+  echo "[CHEZMOI] Postgres is expected.\n"
+  echo "          Install from https://postgresapp.com"
+fi
+```
 
-Anything involving a private key has been excluded from Chezmoi until I can hook up 1Password CLI.
+## Development
+
+### Makefile vs. Curlbash
+
+The Makefile is for development, and does not do the initial install. The `install` target is actually an alias to `chezmoi apply`. Use the above curlbash for the initial install.
+
+### ZSH Functions
+
+A goal of mine is to collect useful tips and place those under `~.config/zsh/functions.d/` so they show up in autocomplete. To simplify that end, `helpers.zsh` includes `test-func()`. This allows skipping the apply step to test most functions.
+
+### TODO
+
+Allow acknowledgement of each check in a persistant way to skip installation and warnings.
+
+Use `brew --prefix` to get the install location without making logic in the tempalte.
+See [prefix docs](https://docs.brew.sh/Manpage#--prefix---unbrewed---installed-formula-).
+
+### Secret Management
+
+**1Password 8** now includes SSH key management, so the following is no longer used for SSH keys. I'll leave it in this readme for a while as a note on how to retrieve old keys that haven't been regenerated yet.
 
 Work secrets are stored in [1Password](https://1password.com/), and you'll need
 the [1Password
@@ -46,11 +95,7 @@ Then, to login afterwards, run:
 
     eval $(op signin)
 
-
 op list items --categories Identity | jq
-
-
-
 
 {{-   onepasswordDocument "SSH public key" .vault -}}
 

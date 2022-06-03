@@ -3,7 +3,7 @@
 set -e # -e: exit on error
 
 if [ ! "$(command -v curl)" ]; then
-    echo "⚠️ To install, you must have curl." >&2
+    echo "[CHEZMOI] ⚠️ To install, you must have curl." >&2
     exit 1
 fi
 
@@ -14,8 +14,8 @@ fi
 
 # Check for chezmoi again after fix
 if [ ! "$(command -v chezmoi)" ]; then
-    echo "⚠️ chezmoi cannot be found" >&2
+    echo "[CHEZMOI] ⚠️ chezmoi cannot be found" >&2
     exit 1
 fi
 
-echo "👍 Initial checks look good!"
+echo "[CHEZMOI] 👍 Initial checks look good!"

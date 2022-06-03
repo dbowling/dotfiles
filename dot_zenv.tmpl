@@ -7,6 +7,13 @@ export MANPAGER="bat --plain"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
+POSTGRES_BIN_DIR="/Applications/Postgres.app/Contents/Versions/latest/bin"
+if [ -d "$POSTGRES_BIN_DIR" ]; then
+  export PATH=${POSTGRES_BIN_DIR}:$PATH
+else
+  unset POSTGRES_BIN_DIR
+fi
+
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" }}
 export HOMEBREW_PATH="/opt/homebrew"

@@ -3,11 +3,11 @@
 set -e # -e: exit on error
 
 if [ ! "$(command -v brew)" ]; then
-    echo "🍺 Install Homebrew"
+    echo "[CHEZMOI] 🍺 Install Homebrew"
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "🍺 Install setup essentials (Brewfile will be installed later)" 
+echo "[CHEZMOI] 🍺 Install setup essentials (Brewfile will be installed later)" 
 
 brew bundle -q --file=/dev/stdin <<EOF
 tap "homebrew/core"
@@ -29,6 +29,6 @@ brew "gawk"
 EOF
 
 if [ -f "$HOME/bin/chezmoi" ]; then
-    echo "🍺 Delete chezmoi bin (which is now managed by homebrew)"
+    echo "[CHEZMOI] 🍺 Delete chezmoi bin (which is now managed by homebrew)"
     rm "$HOME/bin/chezmoi"
 fi
