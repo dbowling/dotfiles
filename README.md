@@ -16,7 +16,7 @@ I've found it useful to also use this repository to automatically install all th
 
 If you're looking for a dotfile-specific alternative to Chezmoi, I'd suggest [Dotbot](https://github.com/anishathalye/dotbot) or [GNU Stow](https://www.gnu.org/software/stow/stow.html), or even [Dotbot Stow](https://github.com/timbedard/dotbot-stow/). For a more robust manager, take a look at Ansible.
 
-## Installing Dotfiles
+## First Install
 
 Installation is a one line command for all managed software and dotfiles.
 
@@ -24,7 +24,7 @@ Installation is a one line command for all managed software and dotfiles.
 
 None. Even Homebrew is installed for you if not present.
 
-###
+### Install
 
 Chezmoi has a curlbash to install a github dotfiles repo:
 
@@ -57,6 +57,18 @@ if [ -z "${POSTGRES_BIN_DIR+1}" ]; then
   echo "          Install from https://postgresapp.com"
 fi
 ```
+
+## Ongoing Use
+
+### Quick Run
+
+`ca` is a defined alias to `chezmoi apply`.
+
+### Homebrew Maintenance
+
+The first item to run after Chezmoi is always a maintenance script for homebrew unless it is explicitly skipped.
+
+TODO - Check for environment variable
 
 ## Development
 
