@@ -17,6 +17,7 @@ export ZSH_MOTD_CUSTOM="Deliver what you promise."
 
 source $ZPLUG_HOME/init.zsh
 
+zplug "lukechilds/zsh-nvm"
 zplug "Kallahan23/zsh-motd"
 zplug "agkozak/zsh-z"
 zplug "junegunn/fzf"

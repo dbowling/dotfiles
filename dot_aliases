@@ -19,7 +19,6 @@ alias ca="chezmoi apply"
 alias ce="code /Users/dbowling/.local/share/chezmoi"
 alias gs="git status"
 alias header="watch --color http -h --pretty all "
-alias nvm="echo 'use volta'"
 # Open all merge conflicts or currently changed files in VS Code
 # Switch out `code` for `subl`, `vim`, `atom` or your editor's CLI
 alias fix="git diff --name-only | uniq | xargs code"
