@@ -96,4 +96,4 @@ cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 cask "kitty"
-
+cask "drawio"
