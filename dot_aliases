@@ -23,3 +23,8 @@ alias header="watch --color http -h --pretty all "
 # Switch out `code` for `subl`, `vim`, `atom` or your editor's CLI
 alias fix="git diff --name-only | uniq | xargs code"
 alias "git latest"="git for-each-ref --sort=-committerdate refs/heads/"
+
+alias funk="afplay /System/Library/Sounds/Funk.aiff"
+alias glass="afplay /System/Library/Sounds/Glass.aiff"
+
+alias npm-install-and-test-update="npm install && npm ci && npm run build && npm run test && funk"
