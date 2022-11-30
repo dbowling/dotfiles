@@ -26,7 +26,15 @@ brew "pinentry-mac"
 brew "ripgrep"
 brew "gpg"
 brew "gawk"
+brew "pyenv"
 EOF
+
+PYTHON_VERSION=$(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
+pyenv install $PYTHON_VERSION 
+pyenv global $PYTHON_VERSION
+
+pip install --upgrade pip
+pip install --user pipenv
 
 if [ -f "$HOME/bin/chezmoi" ]; then
     echo "[CHEZMOI] 🍺 Delete chezmoi bin (which is now managed by homebrew)"
