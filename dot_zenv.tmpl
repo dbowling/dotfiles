@@ -16,13 +16,15 @@ fi
 
 # Homebrew
 {{ if eq .chezmoi.arch "arm64" }}
-export HOMEBREW_PATH="/opt/homebrew"
-export PATH="$HOMEBREW_PATH/sbin:$PATH"
-export PATH="$HOMEBREW_PATH/bin:$PATH"
-export PATH="$HOMEBREW_PATH/opt:$PATH"
+# cannot use HOMEBREW_PATH
+# see https://github.com/orgs/Homebrew/discussions/3115#discussioncomment-3116576
+# export HOMEBREW_PATH="/opt/homebrew"
+export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
+export PATH="$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt:$PATH"
 {{ else }}
 export PATH="/usr/local/opt:$PATH"
-export HOMEBREW_PATH="/usr/local"
+export HOMEBREW_PREFIX="/usr/local"
 {{ end }}
 
 # Nerd fonts
@@ -51,7 +53,7 @@ export SAVEHIST=10000                           # Maximum events in history file
 
 
 # zplug 
-export ZPLUG_HOME=$HOMEBREW_PATH/opt/zplug
+export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 
 # editor
 export EDITOR="nvim"
