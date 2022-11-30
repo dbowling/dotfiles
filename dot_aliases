@@ -13,9 +13,9 @@ alias tree='exa --icons --all --tree  --classify'
 alias shrub='exa --icons --all --tree --level=2  --classify'
 # alias npm='pnpm'
 # alias cat="bat"
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
-alias ca="chezmoi apply"
+# alias python=/usr/local/bin/python3
+# alias pip=/usr/local/bin/pip3
+alias ca="chezmoi apply && reload"
 alias ce="code /Users/dbowling/.local/share/chezmoi"
 alias gs="git status"
 alias header="watch --color http -h --pretty all "
@@ -28,3 +28,6 @@ alias funk="afplay /System/Library/Sounds/Funk.aiff"
 alias glass="afplay /System/Library/Sounds/Glass.aiff"
 
 alias npm-install-and-test-update="npm install && npm ci && npm run build && npm run test && funk"
+
+alias lu="npx lerna bootstrap --ci --concurrency=8 && npm run lint && npm test"
+alias _aws_login="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 935235593273.dkr.ecr.us-east-1.amazonaws.com"
