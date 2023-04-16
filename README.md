@@ -8,8 +8,6 @@ You will find:
 - Spaceship prompt for terminal theme
 - Most integrations work with Kitty terminal, so I leave Terminal and iTerm2 mostly untouched as a fallback
 
-I'm a senior developer at [Deque](https://www.deque.com), working with Axe Core integrations. As such, this will mostly be JavaScript/Web Development.
-
 I've found it useful to also use this repository to automatically install all the software I can figure out how to automate.
 
 ## Alternatives to Chezmoi
